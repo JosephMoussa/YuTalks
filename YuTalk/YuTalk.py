@@ -1,11 +1,13 @@
+from msilib.schema import Font
 from tkinter import *
+from tkinter import font
 from tkinter.messagebox import showinfo
 from gtts import gTTS
 import speech_recognition as sr
 import os
 
 mainwindow = Tk()
-mainwindow.title('DataFlair Text-To-Speech and Speech-To-Text Converter')
+mainwindow.title('Text-To-Speech and Speech-To-Text Converter')
 mainwindow.geometry('500x500')
 mainwindow.resizable(0, 0)
 mainwindow.configure(bg='yellow')
@@ -32,11 +34,11 @@ def recordvoice():
 
 def TextToSpeech():
     texttospeechwindow = Toplevel(mainwindow)
-    texttospeechwindow.title('Text-to-Speech Converter by DataFlair')
+    texttospeechwindow.title('Text-to-Speech Converter by')
     texttospeechwindow.geometry("500x500")
     texttospeechwindow.configure(bg='Blue')
 
-    Label(texttospeechwindow, text='Text-to-Speech Converter by DataFlair',
+    Label(texttospeechwindow, text='Text-to-Speech Converter',
           font=("Times New Roman", 15), bg='Blue').place(x=50)
 
     text = Text(texttospeechwindow, height=5, width=30, font=12)
@@ -49,22 +51,22 @@ def TextToSpeech():
 
 def SpeechToText():
     speechtotextwindow = Toplevel(mainwindow)
-    speechtotextwindow.title('Speech-to-Text Converter by DataFlair')
+    speechtotextwindow.title('You Talk I Speak')
     speechtotextwindow.geometry("600x900")
-    speechtotextwindow.configure(bg='pink')
+    speechtotextwindow.configure(bg='#495C83')
 
-    Label(speechtotextwindow, text='Speech-to-Text Converter by DataFlair',
-          font=("Comic Sans MS", 15), bg='IndianRed').place(x=50)
+    Label(speechtotextwindow, text='You Talk I Speak',
+          font=("Anurati", 15), bg='#495C83').place(x=230)
 
-    text = Text(speechtotextwindow, font=12, height=30, width=51)
+    text = Text(speechtotextwindow, font=('Otto', 26), height=30, width=56)
     text.place(x=20, y=100)
 
-    recordbutton = Button(speechtotextwindow, text='Record',
+    recordbutton = Button(speechtotextwindow, text='Start', width=79,
                           bg='Sienna', command=lambda: text.insert(END, recordvoice()))
-    recordbutton.place(x=140, y=50)
+    recordbutton.place(x=20, y=50)
 
 
-Label(mainwindow, text='DataFlair Text-To-Speech and Speech-To-Text Converter',
+Label(mainwindow, text='Text-To-Speech and Speech-To-Text Converter',
       font=('Times New Roman', 16), bg='red', wrap=True, wraplength=450).place(x=50, y=0)
 
 texttospeechbutton = Button(mainwindow, text='Text-To-Speech Conversion',
