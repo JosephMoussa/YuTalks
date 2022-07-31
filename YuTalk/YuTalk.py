@@ -10,7 +10,7 @@ mainwindow = Tk()
 mainwindow.title('Text-To-Speech and Speech-To-Text Converter')
 mainwindow.geometry('500x500')
 mainwindow.resizable(0, 0)
-mainwindow.configure(bg='yellow')
+mainwindow.configure(bg='#855347')
 
 
 def say(text1):
@@ -35,28 +35,28 @@ def recordvoice():
 def TextToSpeech():
     texttospeechwindow = Toplevel(mainwindow)
     texttospeechwindow.title('Text-to-Speech Converter by')
-    texttospeechwindow.geometry("500x500")
-    texttospeechwindow.configure(bg='Blue')
+    texttospeechwindow.geometry("600x900")
+    texttospeechwindow.configure(bg='#495C83')
 
     Label(texttospeechwindow, text='Text-to-Speech Converter',
-          font=("Times New Roman", 15), bg='Blue').place(x=50)
+          font=("Anurati", 15), bg='#495C83').place(x=190)
 
-    text = Text(texttospeechwindow, height=5, width=30, font=12)
-    text.place(x=7, y=60)
+    text = Text(texttospeechwindow, font=('Otto', 26), height=30, width=56)
+    text.place(x=20, y=100)
 
-    speakbutton = Button(texttospeechwindow, text='listen',
+    speakbutton = Button(texttospeechwindow, text='listen', width=79,
                          bg='coral', command=lambda: say(str(text.get(1.0, END))))
-    speakbutton.place(x=140, y=200)
+    speakbutton.place(x=20, y=50)
 
 
 def SpeechToText():
     speechtotextwindow = Toplevel(mainwindow)
-    speechtotextwindow.title('You Talk I Speak')
+    speechtotextwindow.title('Speech-To-Text Converter')
     speechtotextwindow.geometry("600x900")
     speechtotextwindow.configure(bg='#495C83')
 
-    Label(speechtotextwindow, text='You Talk I Speak',
-          font=("Anurati", 15), bg='#495C83').place(x=230)
+    Label(speechtotextwindow, text='Speech-To-Text Converter',
+          font=("Anurati", 15), bg='#495C83').place(x=190)
 
     text = Text(speechtotextwindow, font=('Otto', 26), height=30, width=56)
     text.place(x=20, y=100)
@@ -67,15 +67,15 @@ def SpeechToText():
 
 
 Label(mainwindow, text='Text-To-Speech and Speech-To-Text Converter',
-      font=('Times New Roman', 16), bg='red', wrap=True, wraplength=450).place(x=50, y=0)
+      font=("Anurati", 20), bg='#855347', wrap=True, wraplength=450).place(x=90, y=0)
 
 texttospeechbutton = Button(mainwindow, text='Text-To-Speech Conversion',
-                            font=('Times New Roman', 16), bg='Purple', command=TextToSpeech)
-texttospeechbutton.place(x=100, y=150)
+                            font=('Anurati', 16), bg='#0aaac2', command=TextToSpeech)
+texttospeechbutton.place(x=110, y=150)
 
 speechtotextbutton = Button(mainwindow, text='Speech-To-Text Conversion',
-                            font=('Times New Roman', 16), bg='Purple', command=SpeechToText)
-speechtotextbutton.place(x=100, y=250)
+                            font=('Anurati', 16), bg='#0aaac2', command=SpeechToText)
+speechtotextbutton.place(x=110, y=250)
 
 mainwindow.update()
 mainwindow.mainloop()
